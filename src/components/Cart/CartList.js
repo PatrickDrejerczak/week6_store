@@ -13,6 +13,6 @@ export default function CartList({ value }) {
   );
 }
 
-CartList.PropTypes = {
+CartList.propTypes = {
   value: PropTypes.object,
 };
