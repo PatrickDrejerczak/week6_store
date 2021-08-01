@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { ProductConsumer } from '../context';
 import { Link } from 'react-router-dom';
-import  ButtonContainer  from './Button';
+import ButtonContainer from './Button';
+import Star from './Star';
+
 export default class Details extends Component {
   render() {
     return (
@@ -12,47 +14,42 @@ export default class Details extends Component {
             <div className="container py-5">
               <div className="row">
                 <div className="col-10 mx-auto text-center text-slanted text-primary my-5">
-                  <h1>
-                    {title}
-                  </h1>
+                  <h1>{title}</h1>
                 </div>
               </div>
               <div className="row">
                 <div className="col-10 mx-auto col-md-6 my-3 ">
-                  <img src={img} alt="product" className="img-fluid"/>
+                  <img src={img} alt="product" className="img-fluid" />
                 </div>
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalized">
-                  <h2>
-                    model: {title}
-                  </h2>
+                  <h2>model: {title}</h2>
                   <h4 className="text-uppercase text-title text-muted mt-3 mb-2">
-                    made by: 
+                    made by:
                     <span className="test-uppercase">{company}</span>
                   </h4>
                   <h4 className="text-primary">
-                    <strong> price: <span>$</span> {price}</strong>
+                    <strong>
+                      {' '}
+                      price: <span>$</span> {price}
+                    </strong>
                   </h4>
-                  <p className="text-capitalize font-weight-bold mt-3 mb-0">
-                    info
-                  </p>
+                  <p className="text-capitalize font-weight-bold mt-3 mb-0">info</p>
                   <p className="text-muted lead">{info}</p>
                   <div>
                     <Link to="/">
-                      <ButtonContainer>
-                        back to products
-                      </ButtonContainer>
+                      <ButtonContainer>back to products</ButtonContainer>
                     </Link>
                     <ButtonContainer
                       cart
                       disabled={!!inCart}
-                      onClick={ ()=> {
-                        value.addProduct(id)
+                      onClick={() => {
+                        value.addProduct(id);
                       }}
                     >
-                      {inCart ? 
-                        "in Cart" : "add to Cart"
-                      }
+                      {inCart ? 'in Cart' : 'add to Cart'}
                     </ButtonContainer>
+                    <br />
+                    <Star />
                   </div>
                 </div>
               </div>
